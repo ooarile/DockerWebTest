@@ -1,7 +1,8 @@
 # Use the official ASP.NET Core runtime as a parent image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app  # 작업 디렉토리를 /app으로 설정합니다.
-EXPOSE 80  # 컨테이너의 80번 포트를 외부에 노출합니다.
+EXPOSE 80
+# 컨테이너의 80번 포트를 외부에 노출합니다.
 
 # Use the .NET SDK image to build the app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
