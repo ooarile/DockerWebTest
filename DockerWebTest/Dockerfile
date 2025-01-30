@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["DockerWebTest/DockerWebTest.csproj", "DockerWebTest/"]
+COPY ["DockerWebTest.csproj", "DockerWebTest/"]
 RUN dotnet restore "DockerWebTest/DockerWebTest.csproj"
 COPY . .
 WORKDIR "/src/DockerWebTest"
