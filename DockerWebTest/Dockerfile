@@ -3,8 +3,8 @@ WORKDIR /src
 COPY ["DockerWebTest.csproj", "."]
 RUN dotnet restore "./DockerWebTest.csproj"
 COPY . .
-WORKDIR "/src/DockerWebTest"
-RUN dotnet publish -c Release -o /app/publish
+WORKDIR "/src"
+RUN dotnet publish "DockerWebTest.csproj" -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
