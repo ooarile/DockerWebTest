@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["DockerWebTest.csproj", "DockerWebTest/"]
-RUN dotnet restore "DockerWebTest/DockerWebTest.csproj"
+COPY ["DockerWebTest.csproj", "."]
+RUN dotnet restore "./DockerWebTest.csproj"
 COPY . .
 WORKDIR "/src/DockerWebTest"
 RUN dotnet publish -c Release -o /app/publish
